@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/shuibuzhuo/shuibuzhuo-build#readme",
   "dependencies": {
+    "chokidar": "^3.5.3",
     "commander": "9.2.0",
     "semver": "^7.3.7"
   }
