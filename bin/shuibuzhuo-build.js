@@ -1,10 +1,18 @@
 #!/usr/bin/env node
-const { program } = require("commander");
+const { Command } = require("commander");
+const pkg = require("../package.json");
+const checkNode = require("../lib/checkNode");
 
-program.option("--first").option("-s --seperator <char>");
+const MIN_NODE_VERSION = "8.9.0";
 
-program.parse();
-
-const options = program.opts();
-const limit = options.first ? 1 : undefined;
-console.log(program.args[0].split(options.seperator, limit));
+(async () => {
+  try {
+    if (!checkNode(MIN_NODE_VERSION)) {
+      throw new Error(
+        "Please upgrade your node version to v" + MIN_NODE_VERSION
+      );
+    }
+  } catch (error) {
+    console.log(error.message);
+  }
+})();
