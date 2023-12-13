@@ -1,5 +1,5 @@
 {
   "entry": "src/index.js",
-  "output": "dist12",
+  "output": "dist123",
   "plugins": ["shuibuzhuo-build-test"]
 }
