@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+checkDebug();
+
 const { program } = require("commander");
 const pkg = require("../package.json");
 const checkNode = require("../lib/checkNode");
@@ -6,6 +8,14 @@ const startServer = require("../lib/start/startServer");
 const build = require("../lib/build/build");
 
 const MIN_NODE_VERSION = "8.9.0";
+
+function checkDebug() {
+  if (process.argv.indexOf("--debug") >= 0 || process.argv.indexOf("-d") >= 0) {
+    process.env.LOG_LEVEL = "verbose";
+  } else {
+    process.env.LOG_LEVEL = "info";
+  }
+}
 
 (async () => {
   try {
@@ -19,15 +29,19 @@ const MIN_NODE_VERSION = "8.9.0";
 
     program
       .command("start")
+      .option("-c, --config <config>", "配置文件路径")
       .description("start server by shuibuzhuo-build")
       .allowUnknownOption()
       .action(startServer);
 
     program
       .command("build")
+      .option("-c, --config <config>", "配置文件路径")
       .description("build project by shuibuzhuo-build")
       .allowUnknownOption()
       .action(build);
+
+    program.option("-d, --debug", "开启调式模式");
 
     program.parse();
   } catch (error) {
