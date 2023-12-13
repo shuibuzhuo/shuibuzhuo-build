@@ -2,9 +2,9 @@ module.exports = {
   entry: "src/index.js",
   hooks: [
     [
-      "created",
+      "start",
       function (context) {
-        console.log("created", context);
+        console.log("start", context);
       },
     ],
     [
