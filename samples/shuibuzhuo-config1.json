@@ -1,0 +1,6 @@
+{
+  "entry": "src/index.js",
+  "output": "dist123",
+  "plugins": ["shuibuzhuo-build-test", ["shuibuzhuo-build-test", {"a": 10, "b": 20}], ["./plugins/shuibuzhuo-build-plugin", {"a": 10, "b": 20, "c": 30}]],
+  "hooks": []
+}
