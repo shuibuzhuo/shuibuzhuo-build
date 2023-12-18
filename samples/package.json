@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "shuibuzhuo-build start --debug  --custom-webpack-path D:/development/nodejs/webpack"
+    "dev": "shuibuzhuo-build start --debug",
+    "build": "cross-env ZHUO_BUILD_MODE=production shuibuzhuo-build build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "webpack": "^5.72.1",
-    "webpack-chain": "^6.5.1"
+    "cross-env": "^7.0.3"
   }
 }
