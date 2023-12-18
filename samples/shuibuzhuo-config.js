@@ -12,12 +12,16 @@ module.exports = {
           .end()
           .use("eslint")
           .loader("eslint-loader");
-        console.log(
-          "this is anonymous plugin config",
-          JSON.stringify(config.toConfig())
-        );
+        api.log.verbose("api.getValue", api.getValue("info"));
       },
     ];
   },
-  hooks: [],
+  hooks: [
+    [
+      "plugin",
+      (context) => {
+        console.log("config--", context.webpackConfig.toConfig());
+      },
+    ],
+  ],
 };
