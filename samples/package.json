@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "shuibuzhuo-build start --debug"
+    "dev": "shuibuzhuo-build start --debug  --custom-webpack-path D:/development/nodejs/webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "webpack": "^5.72.1",
     "webpack-chain": "^6.5.1"
   }
 }

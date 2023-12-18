@@ -2,7 +2,7 @@ module.exports = {
   entry: "src/index.js",
   plugins: function () {
     return [
-      ["shuibuzhuo-build-test", { a: 10, b: 20 }],
+      // ["shuibuzhuo-build-test", { a: 10, b: 20 }],
       function (api, options) {
         const config = api.getWebpackConfig();
         config.module
@@ -20,7 +20,7 @@ module.exports = {
     [
       "plugin",
       (context) => {
-        console.log("config--", context.webpackConfig.toConfig());
+        console.log("config", context.webpackConfig.toConfig());
       },
     ],
   ],
