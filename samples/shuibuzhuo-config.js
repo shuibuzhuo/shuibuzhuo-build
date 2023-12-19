@@ -2,7 +2,7 @@ module.exports = {
   entry: "src/index.js",
   plugins: function () {
     return [
-      // ["shuibuzhuo-build-test", { a: 10, b: 20 }],
+      ["./plugins/shuibuzhuo-build-plugin", { a: 10, b: 20 }],
       function (api, options) {
         const config = api.getWebpackConfig();
         config.module
