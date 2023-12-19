@@ -88,4 +88,22 @@ module.exports = function (api, options) {
   ]);
 
   config.plugin("CleanPlugin").use(CleanWebpackPlugin, []);
+
+  config.optimization.minimize(true).splitChunks({
+    minSize: 30 * 1024,
+    chunks: "all",
+    name: "common",
+    cacheGroups: {
+      jquery: {
+        name: "jquery",
+        test: /jquery\.js/,
+        chunks: "all",
+      },
+      "lodash-es": {
+        name: "lodash-es",
+        test: /lodash-es/,
+        chunks: "all",
+      },
+    },
+  });
 };
