@@ -16,7 +16,7 @@ module.exports = function (api, options) {
 
   config.entry("index").add(path.resolve(dir, "./src/index.js"));
 
-  config.output.filename("js/[name]/js").path(path.resolve(dir, "./dist"));
+  config.output.filename("js/[name].js").path(path.resolve(dir, "./dist"));
 
   config.module
     .rule("css")
@@ -61,31 +61,31 @@ module.exports = function (api, options) {
     },
   ]);
 
-  config.plugin("HtmlWebpackPlugin").use(HtmlWebpackPlugin, [
-    {
-      filename: "index.html",
-      template: path.resolve(dir, "./public/index.html"),
-      chunks: ["index"],
-    },
-  ]);
+  // config.plugin("HtmlWebpackPlugin").use(HtmlWebpackPlugin, [
+  //   {
+  //     filename: "index.html",
+  //     template: path.resolve(dir, "./public/index.html"),
+  //     chunks: ["index"],
+  //   },
+  // ]);
 
-  config.plugin("ProvidePlugin").use(webpack.DefinePlugin, [
-    {
-      $: "jquery",
-      jQuery: "jquery",
-    },
-  ]);
+  // config.plugin("ProvidePlugin").use(webpack.DefinePlugin, [
+  //   {
+  //     $: "jquery",
+  //     jQuery: "jquery",
+  //   },
+  // ]);
 
-  config.plugin("CopyPlugin").use(CopyWebpackPlugin, [
-    {
-      patterns: [
-        {
-          from: path.resolve(dir, "./src/img"),
-          to: path.resolve(dir, "./dist/img"),
-        },
-      ],
-    },
-  ]);
+  // config.plugin("CopyPlugin").use(CopyWebpackPlugin, [
+  //   {
+  //     patterns: [
+  //       {
+  //         from: path.resolve(dir, "./src/img"),
+  //         to: path.resolve(dir, "./dist/img"),
+  //       },
+  //     ],
+  //   },
+  // ]);
 
   config.plugin("CleanPlugin").use(CleanWebpackPlugin, []);
 

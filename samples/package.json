@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "shuibuzhuo-build start --debug",
+    "dev": "shuibuzhuo-build start",
     "build": "cross-env ZHUO_BUILD_MODE=production shuibuzhuo-build build"
   },
   "keywords": [],
