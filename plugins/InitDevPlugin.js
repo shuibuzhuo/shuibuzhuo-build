@@ -11,7 +11,7 @@ module.exports = function (api, options) {
   const config = getWebpackConfig();
   const dir = process.cwd();
 
-  const mode = process.env.ZHUO_BUILD_MODE || "development";
+  const mode = process.env.Z_BUILD_MODE || "development";
   config.mode(mode);
 
   config.entry("index").add(path.resolve(dir, "./src/index.js"));
@@ -42,17 +42,6 @@ module.exports = function (api, options) {
   config.module
     .rule("asset")
     .set("generator", { filename: "images/[name].[hash:6][ext]" });
-
-  config.module
-    .rule("ejs")
-    .test(/\.ejs$/)
-    .exclude.add(/node_modules/)
-    .end()
-    .use("ejs-loader")
-    .loader("ejs-loader")
-    .options({
-      esModule: false,
-    });
 
   config.plugin("MiniCssExtractPlugin").use(MiniCSSExtractPlugin, [
     {
