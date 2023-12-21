@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "shuibuzhuo-build start",
+    "dev": "shuibuzhuo-build start --debug --custom-webpack-path /Users/tuomatuo/.nvm/versions/node/v14.21.3/bin/webpack",
     "build": "cross-env ZHUO_BUILD_MODE=production shuibuzhuo-build build"
   },
   "keywords": [],
