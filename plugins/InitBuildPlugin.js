@@ -61,13 +61,13 @@ module.exports = function (api, options) {
     },
   ]);
 
-  // config.plugin("HtmlWebpackPlugin").use(HtmlWebpackPlugin, [
-  //   {
-  //     filename: "index.html",
-  //     template: path.resolve(dir, "./public/index.html"),
-  //     chunks: ["index"],
-  //   },
-  // ]);
+  config.plugin("HtmlWebpackPlugin").use(HtmlWebpackPlugin, [
+    {
+      filename: "index.html",
+      template: path.resolve(dir, "./public/index.html"),
+      chunks: ["index"],
+    },
+  ]);
 
   // config.plugin("ProvidePlugin").use(webpack.DefinePlugin, [
   //   {
@@ -106,4 +106,6 @@ module.exports = function (api, options) {
       },
     },
   });
+
+  config.watch(true)
 };
