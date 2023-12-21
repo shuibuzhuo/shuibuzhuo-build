@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "shuibuzhuo-build start --debug --custom-webpack-path /Users/tuomatuo/.nvm/versions/node/v14.21.3/bin/webpack",
+    "dev": "shuibuzhuo-build start",
     "build": "cross-env ZHUO_BUILD_MODE=production shuibuzhuo-build build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^5.72.1",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.72.1"
   }
 }
