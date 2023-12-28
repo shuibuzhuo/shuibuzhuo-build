@@ -77,6 +77,4 @@ module.exports = function (api, options) {
       },
     },
   });
-
-  config.watch(true)
 };
