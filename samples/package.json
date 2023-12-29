@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "shuibuzhuo-build start --stop-build --debug",
-    "build": "cross-env Z_BUILD_MODE=production shuibuzhuo-build build --debug"
+    "build": "shuibuzhuo-build build --debug",
+    "vite": "shuibuzhuo-build start --stop-build --config shuibuzhuo-vite.json"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "html-webpack-plugin": "^5.5.0",
+    "vite": "^5.0.10",
     "webpack": "^5.72.1"
   }
 }
