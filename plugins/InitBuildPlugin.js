@@ -11,7 +11,14 @@ module.exports = function (api, options) {
   const config = getWebpackConfig();
   const dir = process.cwd();
 
-  const mode = process.env.Z_BUILD_MODE || "development";
+  const cmd = api.getCommand();
+
+  let mode;
+  if (cmd === "build") {
+    mode = "production";
+  } else {
+    mode = process.env.Z_BUILD_MODE || "development";
+  }
   config.mode(mode);
 
   config.entry("index").add(path.resolve(dir, "./src/index.js"));
